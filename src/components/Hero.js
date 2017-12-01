@@ -1,12 +1,15 @@
 import React from 'react';
-const Hero = (prop) => {
+const Hero = (props) => {
   return (
-    <li>
+    <li
+        onClick={() => props.onSelect(props.hero)}
+        className={props.hero === props.selectedHero ? 'selected' : ''}
+    >
       <button className="delete-button">Delete</button>
       <div className="hero-element">
-        <div className="badge">{prop.hero.id}</div>
-        <div className="name">{prop.hero.name}</div>
-        <div className="saying">{prop.hero.saying}</div>
+        <div className="badge">{props.hero.id}</div>
+        <div className="name">{props.hero.name}</div>
+        <div className="saying">{props.hero.saying}</div>
       </div>
     </li>
   );
